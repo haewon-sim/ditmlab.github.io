@@ -19,14 +19,6 @@ current:
 
   ms:
     - id: "sim-haewon"
-      email_id: "haewon.sim"
-      name_ko: "김수빈"
-      role: "MS Student"
-      photo: "/assets/img/avatar-placeholder.svg"
-      tags:
-        - "AI Management"
-
-    - id: "sim-haewon"
       name_ko: "김수빈"
       role: "MS Student"
       photo: "/assets/img/avatar-placeholder.svg"
@@ -47,9 +39,7 @@ current:
       tags:
         - "AI Management"
 
-
-
-visiting:
+  visiting:
     - id: "wang-zengfu"
       # 표시용 이메일 ID (예: abc123). 비워두면 id 값을 사용합니다.
       name_ko: "Zengfu Wang"
