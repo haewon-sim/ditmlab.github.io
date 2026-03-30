@@ -57,48 +57,54 @@ body_class: members-page
 
     {% assign current = site.data.members.current %}
 
-    {% assign all_current = current.phd | concat: current.ms %}
-    <div class="people-list" role="list" aria-label="재학생 목록">
-      {% assign prev_role_group = '' %}
-      {% for m in all_current %}
-      {% assign cur_role_group = m.role | split: ' ' | last %}
-      {% if cur_role_group != prev_role_group %}
-      <h3 class="people-subtitle" style="margin-top: {% if forloop.first %}0{% else %}var(--space-5){% endif %};">{% if m.role contains 'PhD' %}박사과정{% else %}석사과정{% endif %}</h3>
-      {% assign prev_role_group = cur_role_group %}
+    {% assign _member_groups = "phd,ms" | split: "," %}
+    {% for _group in _member_groups %}
+      {% if _group == "phd" %}
+        {% assign _group_label = "박사과정" %}
+        {% assign _members = current.phd %}
+      {% else %}
+        {% assign _group_label = "석사과정" %}
+        {% assign _members = current.ms %}
       {% endif %}
-      <article class="person" role="listitem">
-        <div class="person-avatar" aria-hidden="true">
-          <img src="{{ m.photo | default: '/assets/img/avatar-placeholder.svg' }}" alt="" loading="lazy" />
-        </div>
-        <div class="person-main">
-          <div class="person-top">
-            <h3 class="person-name">{{ m.name_ko }}</h3>
-            <div class="person-right">
-              <span class="person-role">{{ m.role }}</span>
+      {% if _members and _members.size > 0 %}
+      <h3 class="people-subtitle" style="margin-top: {% if forloop.first %}0{% else %}var(--space-5){% endif %};">{{ _group_label }}</h3>
+      <div class="people-list" role="list" aria-label="{{ _group_label }} 목록">
+        {% for m in _members %}
+        <article class="person" role="listitem">
+          <div class="person-avatar" aria-hidden="true">
+            <img src="{{ m.photo | default: '/assets/img/avatar-placeholder.svg' }}" alt="" loading="lazy" />
+          </div>
+          <div class="person-main">
+            <div class="person-top">
+              <h3 class="person-name">{{ m.name_ko }}</h3>
+              <div class="person-right">
+                <span class="person-role">{{ m.role }}</span>
+              </div>
+            </div>
+            {% if m.tags and m.tags.size > 0 %}
+            <div class="person-tags" aria-label="연구 키워드">
+              {% for t in m.tags %}<span class="tag">{{ t }}</span>{% endfor %}
+            </div>
+            {% endif %}
+            {% if m.email_id %}
+            {% assign email_id = m.email_id | strip %}
+            {% if email_id != '' %}
+            <div style="margin-top:6px; color: var(--muted-2); font-size: 0.92rem;">
+              {{ email_id }}@연세이메일
+            </div>
+            {% endif %}
+            {% endif %}
+            <div class="person-actions">
+              {% if m.achievements and m.achievements.size > 0 %}
+              <button class="person-more js-person-more" type="button" data-person-id="{{ m.id }}">자세히 보기</button>
+              {% endif %}
             </div>
           </div>
-          {% if m.tags and m.tags.size > 0 %}
-          <div class="person-tags" aria-label="연구 키워드">
-            {% for t in m.tags %}<span class="tag">{{ t }}</span>{% endfor %}
-          </div>
-          {% endif %}
-          {% if m.email_id %}
-          {% assign email_id = m.email_id | strip %}
-          {% if email_id != '' %}
-          <div style="margin-top:6px; color: var(--muted-2); font-size: 0.92rem;">
-            {{ email_id }}@연세이메일
-          </div>
-          {% endif %}
-          {% endif %}
-          <div class="person-actions">
-            {% if m.achievements and m.achievements.size > 0 %}
-            <button class="person-more js-person-more" type="button" data-person-id="{{ m.id }}">자세히 보기</button>
-            {% endif %}
-          </div>
-        </div>
-      </article>
-      {% endfor %}
-    </div>
+        </article>
+        {% endfor %}
+      </div>
+      {% endif %}
+    {% endfor %}
 
     <div style="margin-top: var(--space-8);"></div>
 
@@ -123,7 +129,7 @@ body_class: members-page
               </div>
               {% if m.from %}
               <div style="margin-top:6px; color: var(--muted-2); font-size: 0.92rem;">
-                🏫 {{ m.from }}
+                From {{ m.from }}
               </div>
               {% endif %}
               {% if m.tags and m.tags.size > 0 %}
