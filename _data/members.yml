@@ -40,9 +40,9 @@ current:
         - "AI Management"
 
   visiting:
-    - id: "wang-zengfu"
+    - id: "wang-zhengfu"
       # 표시용 이메일 ID (예: abc123). 비워두면 id 값을 사용합니다.
-      name_ko: "Zengfu Wang"
+      name_ko: "Zhengfu Wang"
       from: "Harbin Institute of Technology"
       role: "Visiting PhD Student"
       photo: "/assets/img/avatar-placeholder.svg"
