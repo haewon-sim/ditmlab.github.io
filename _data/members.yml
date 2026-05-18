@@ -4,10 +4,11 @@ current:
       email_id: "haewon.sim"
       name_ko: "심해원"
       role: "PhD Student"
-      photo: "/assets/img/avatar-placeholder.svg"
+      photo: "/assets/img/haewon_profile.png"
       tags:
-        - "Digital Transformation"
         - "AI Management"
+        - "Human-AI Collaboration"
+        - "Information Ecosystems"
       achievements:
         - year: 2025
           type: "Paper"
@@ -45,7 +46,9 @@ current:
       name_ko: "Zhengfu Wang"
       from: "Harbin Institute of Technology"
       role: "Visiting PhD Student"
-      photo: "/assets/img/avatar-placeholder.svg"
+      photo: "/assets/img/zhengfu_profile.jpeg"
+      tags:
+      - "Strategy and Innovation"
 
 
 alumni: 
