@@ -4,7 +4,7 @@ current:
       email_id: "haewon.sim"
       name_ko: "심해원"
       role: "PhD Student"
-      photo: "/assets/img/haewon_profile.png"
+      photo: "/assets/img/haewon_profile.jpeg"
       tags:
         - "AI Management"
         - "Human-AI Collaboration"
