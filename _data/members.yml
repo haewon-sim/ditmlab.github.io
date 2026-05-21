@@ -6,9 +6,9 @@ current:
       role: "PhD Student"
       photo: "/assets/img/haewon_profile.jpeg"
       tags:
-        - "AI Management"
         - "Human-AI Interaction"
-        - "Platform Economics"
+        - "AI Governance"
+        - "Platform Economy"
       achievements:
         - year: 2025
           type: "Paper"
