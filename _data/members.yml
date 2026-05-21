@@ -7,8 +7,8 @@ current:
       photo: "/assets/img/haewon_profile.jpeg"
       tags:
         - "AI Management"
-        - "Human-AI Collaboration"
-        - "Information Ecosystems"
+        - "Human-AI Interaction"
+        - "AI Agents and Information Ecosystems"
       achievements:
         - year: 2025
           type: "Paper"
@@ -19,12 +19,15 @@ current:
           url: "https://dx.doi.org/10.14329/isr.2025.27.4.443"
 
   ms:
-    - id: "sim-haewon"
+    - id: "kim-soobin"
+      email_id: "soo"
       name_ko: "김수빈"
       role: "MS Student"
-      photo: "/assets/img/avatar-placeholder.svg"
+      photo: "/assets/img/soobin_profile.jpeg"
       tags:
         - "AI Management"
+        - "Digital Business"
+        - "Customer Behavior"
 
     - id: "park-juwon"
       email_id: "gabrielpark0701"
