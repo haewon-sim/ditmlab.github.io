@@ -40,6 +40,7 @@ current:
         - "Digital Innovation in Finance"
 
     - id: "oh-yena"
+      email_id: "yenaoh"
       name_ko: "오예나"
       role: "MS Student"
       photo: "/assets/img/yena_profile.jpeg"
